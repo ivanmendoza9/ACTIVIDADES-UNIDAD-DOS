@@ -1,172 +1,29 @@
-# Actividad1U2
-## Elaborado por: Mendoza Suarez Ivan Gustavo 
-## No. de Control: 22210910
+# 📚 Patrones de Diseño
 
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+Repositorio creado para la materia **Patrones de Diseño**, donde se almacenarán las actividades, ejercicios y ejemplos de implementación de diferentes patrones aplicados en programas.
 
-namespace @abstract
-{
-    public abstract class MaterialFactory
-    {
-        public abstract Guia CrearGuia();
+## 📌 Objetivo
 
-        public abstract Examen CrearExamen();
+El objetivo de este repositorio es documentar y mostrar la implementación práctica de distintos **patrones de diseño de software**, aplicados en programas desarrollados durante el curso.
 
-    }
 
-    public abstract class Guia
-    {
-        public abstract void Mostrar();
-    }
+## 💻 Tecnologías utilizadas
 
-    public abstract class Examen
-    {
-        public abstract void Aplicar();
-    }
-}
+Los ejemplos de los patrones serán implementados utilizando principalmente:
 
-namespace @abstract
-{
-    public class GuiaImpresa : Guia
-    {
-        public override void Mostrar()
-        {
-            Console.WriteLine("Mostrando la guia impresa...");
-        }
-    }
+- C#
+- Diagramas UML
+- Documentación en Markdown
 
-    public class ExamenEnPapel : Examen
-    {
-        public override void Aplicar()
-        {
-            Console.WriteLine("Se aplica examen en papel...");
-        }
-    }
-}
+## 👨‍💻 Autor
 
-namespace @abstract
-{
-    public class GuiaPDF : Guia
-    {
-        public override void Mostrar()
-        {
-            Console.WriteLine("Mostrando la guia PDF...");
-        }
-    }
-    public class ExamenOnline : Examen
-    {
-        public override void Aplicar()
-        {
-            Console.WriteLine("Se aplica examen en linea...");
-        }
-    }
-}
+**Ivan Gustavo Mendoza Suarez**
 
-namespace @abstract
-{
-    public class GuiaSemi : Guia
-    {
-        public override void Mostrar()
-        {
-            Console.WriteLine("Mostrando la guia en Modalidad Hibrida (semipresencial)...");
-        }
-    }
-    public class ExamenMixto : Examen
-    {
-        public override void Aplicar()
-        {
-            Console.WriteLine("Se aplica examen mixto...");
-        }
-    }
-}
+## 📅 Curso
 
-namespace @abstract
-{
-    public class MaterialPresencialFactory : MaterialFactory
-    {
-        public override Guia CrearGuia()
-        {
-            return new GuiaImpresa();
-        }
-    
-        public override Examen CrearExamen()
-        {
-            return new ExamenEnPapel();
-        }
-    }
-}
+Materia: **Patrones de Diseño**  
+Carrera: Ingeniería en Sistemas Computacionales
+Maestra: Maribel Guerrero Ruiz
+---
 
-namespace @abstract
-{
-    public class MaterialVirtualFactory : MaterialFactory
-    {
-        public override Guia CrearGuia()
-        {
-            return new GuiaPDF();
-        }
-
-        public override Examen CrearExamen()
-        {
-            return new ExamenOnline();
-        }
-    }
-}
-
-namespace @abstract
-{
-    public class MaterialHibridoFactory : MaterialFactory
-    {
-        public override Guia CrearGuia()
-        {
-            return new GuiaSemi();
-        }
-
-        public override Examen CrearExamen()
-        {
-            return new ExamenMixto();
-        }
-    }
-}
-namespace @abstract
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            MaterialFactory fabrica;
-            fabrica = new MaterialPresencialFactory();
-
-            Guia guia = fabrica.CrearGuia();
-            Examen examen = fabrica.CrearExamen();
-
-            guia.Mostrar();
-            examen.Aplicar();
-
-            Console.WriteLine("");
-
-            fabrica = new MaterialVirtualFactory();
-
-            guia = fabrica.CrearGuia();
-            examen = fabrica.CrearExamen();
-
-            guia.Mostrar();
-            examen.Aplicar();
-
-            Console.WriteLine("");
-
-            fabrica = new MaterialHibridoFactory();
-
-            guia = fabrica.CrearGuia();
-            examen = fabrica.CrearExamen();
-
-            guia.Mostrar();
-            examen.Aplicar();
-        }
-    }
-}
-```
+✏️ Este repositorio se actualizará constantemente conforme se agreguen nuevas actividades y ejemplos de implementación de los diferentes patrones de diseño.
